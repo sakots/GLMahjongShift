@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GL-MahjongTile 変換</title>
+    <style>
+      body { max-width: 52rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.5; }
+      label, textarea, select, button { font: inherit; } textarea { box-sizing: border-box; display: block; width: 100%; min-height: 8rem; margin: .5rem 0 1rem; } .row { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; } #error { min-height: 1.5em; }
+    </style>
+  </head>
+  <body>
+    <h1>GL-MahjongTile 変換</h1>
+    <div class="row"><label>変換方向 <select id="direction"><option value="to-gl">麻雀表記 → GL文字列</option><option value="to-mahjong">GL文字列 → 麻雀表記</option></select></label><button id="copy" type="button">結果をコピー</button></div>
+    <label for="source">入力</label><textarea id="source" placeholder="例: 123m 456p 東南西"></textarea>
+    <label for="result">結果</label><textarea id="result" readonly></textarea>
+    <p id="error" aria-live="polite"></p>
+    <p><small>数牌は <code>123m</code> のように入力します。大文字スート（<code>123M</code>）は横倒し数牌です。花牌は春夏秋冬・梅蘭竹菊、または Unicode 牌に対応します。</small></p>
+    <script type="module" src="./web.js"></script>
+  </body>
+</html>
